@@ -1,42 +1,117 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+  background-color: #242424
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.main-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title {
+  color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.input-wrapper {
+    position: relative;
+    padding-bottom: 1.25rem;
 }
 
-.card {
-  padding: 2em;
+.movie-input {
+  height: 20px;
+  width: 200px;
+  border-radius: 12px;
+  border: 1px solid #727070;
+  background-color: #f9f9f9;
+  padding: 0.75rem 2.5rem 0.75rem 0.75rem;
+  outline: none;
 }
 
-.read-the-docs {
-  color: #888;
+.movie-input::placeholder {
+    color: #A3A3A3;
+}
+
+.clear-button {
+  position: absolute;
+  top: 50%;
+  right: .5rem;
+  transform: translateY(-90%);
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #727070;
+  cursor: pointer;
+}
+
+.search-button {
+  background-color: #ff7322;
+  color: #FFFAFA;
+  border: none;
+  height: 40px;
+  width: 200px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+
+}
+
+.search-button:hover {
+    background-color: #FFFAFA;
+    border: 1px solid #ff7322;
+    color: #ff7322;
+}
+
+.search-button:active {
+    background-color: rgb(192, 64, 0);
+    transform: scale(0.99);
+}
+
+.movie-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.movie-poster {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.movie-info {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: start;
+}
+
+.movie-title {
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
+  font-size: 32px;
+  margin: 0%;
+}
+
+.movie-year {
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
+  font-size: 16px;
+}
+
+.not-found {
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
+  font-size: 32px;
 }
